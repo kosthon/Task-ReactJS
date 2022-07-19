@@ -1,0 +1,29 @@
+.todoCounter {
+	display: flex;
+	align-items: center;
+	gap: 15px;
+}
+.todoCounter-title {
+	color: #3c3c3c;
+	font-size: 26px;
+	font-weight: 700;
+	line-height: 1;
+}
+.todoCounter-subtitle {
+	color: #5a5a5a;
+	font-size: 16px;
+	font-weight: 500;
+}
+.todoCounter-icon {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	color: #2000a1;
+	background-color: #e9e3ff;
+	line-height: 1;
+	border-radius: 50%;
+	padding: 10px;
+}
