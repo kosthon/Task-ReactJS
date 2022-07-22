@@ -7,8 +7,10 @@ function TodoForm() {
 
 	const onSubmit = event => {
 		event.preventDefault();
-		addToDo(newToDoValue);
-		setOpenModal(false);
+		if (newToDoValue.length >= 4) {
+			addToDo(newToDoValue);
+			setOpenModal(false);
+		}
 	};
 
 	const onChange = event => {
@@ -20,10 +22,10 @@ function TodoForm() {
 	};
 
 	return (
-		<form onSubmit={onSubmit}>
-			<label></label>
-			<textarea placeholder='Write task please' value={newToDoValue} onChange={onChange} />
-			<div>
+		<form className='modal__content-form' onSubmit={onSubmit}>
+			<label>Write a task to accomplish</label>
+			<textarea placeholder='Read a book' required value={newToDoValue} onChange={onChange} />
+			<div className='modal__content-buttons'>
 				<button type='button' onClick={onCancel}>
 					Cancel
 				</button>
