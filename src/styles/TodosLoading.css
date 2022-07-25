@@ -1,0 +1,39 @@
+.todoItem__loading {
+	height: 70px;
+}
+.todoItem-icon__loading {
+	height: 32px;
+	width: 32px;
+	border-radius: 50%;
+}
+.todoItem-text__loading {
+	width: 80px;
+	height: 16px;
+	border-radius: 4px;
+}
+.todoItem-delete__loading {
+	width: 16px;
+	height: 16px;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	border-radius: 4px;
+}
+.todoItem-icon__loading,
+.todoItem-delete__loading,
+.todoItem-text__loading {
+	background: linear-gradient(90deg, rgba(250, 250, 250, 1), rgb(200, 199, 199));
+	background-size: 400% 400%;
+	animation: loadingAnimation 3s ease-in-out infinite;
+}
+@keyframes loadingAnimation {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}

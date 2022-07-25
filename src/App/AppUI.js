@@ -7,6 +7,9 @@ import {CreateTodoButton} from '../components/CreateTodoButton';
 import {TodoContext} from '../components/TodoContext';
 import {Modal} from '../components/Modal';
 import {TodoForm} from '../components/TodoForm';
+import {TodosError} from '../components/TodosError';
+import {TodosLoading} from '../components/TodosLoading';
+import {TodosEmpty} from '../components/TodosEmpty';
 import './App.css';
 
 function AppUI() {
@@ -18,11 +21,14 @@ function AppUI() {
 			<TodoCounter />
 			<TodoSearch />
 			<TodoList>
-				{error && <p className='informative__mesagge'>Error!</p>}
-				{loading && <p className='informative__mesagge'>Loading...</p>}
-				{!loading && !searchedToDos.length && (
-					<p className='informative__mesagge'>Create your first task please</p>
+				{error && <TodosError />}
+				{loading && (
+					<ul>
+						<TodosLoading />
+						<TodosLoading />
+					</ul>
 				)}
+				{!loading && !searchedToDos.length && <TodosEmpty />}
 				{searchedToDos.map(item => (
 					<TodoItem
 						key={item.text}
