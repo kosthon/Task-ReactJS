@@ -13,7 +13,7 @@ import {TodosEmpty} from '../components/TodosEmpty';
 import './App.css';
 
 function AppUI() {
-	const {error, loading, searchedToDos, completeToDo, deleteToDo, openModal, setOpenModal} =
+	const {error, loading, searchedToDos, completeToDo, deleteToDo, openModal} =
 		React.useContext(TodoContext);
 
 	return (
