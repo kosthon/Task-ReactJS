@@ -1,13 +1,11 @@
 import React from 'react';
-import {TodoContext} from '../components/TodoContext';
+import {useTodos} from '../App/useTodos';
 
 import '../styles/CreateTodoButton.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
 
-function CreateTodoButton() {
-	const {openModal, setOpenModal} = React.useContext(TodoContext);
-
+function CreateTodoButton({openModal, setOpenModal}) {
 	const onClickButton = () => {
 		setOpenModal(!openModal);
 	};

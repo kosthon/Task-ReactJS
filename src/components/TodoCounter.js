@@ -1,13 +1,9 @@
 import React from 'react';
-import {TodoContext} from '../components/TodoContext';
-
 import '../styles/TodoCounter.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faListCheck} from '@fortawesome/free-solid-svg-icons';
 
-function TodoCounter() {
-	const {totalToDos, completedToDos} = React.useContext(TodoContext);
-
+function TodoCounter({totalToDos, completedToDos}) {
 	return (
 		<div className='todoCounter'>
 			<span className='todoCounter-icon'>

@@ -1,9 +1,7 @@
 import React from 'react';
 import {useLocalStorage} from './UseLocalStorage';
 
-const TodoContext = React.createContext();
-
-function TodoProvider(props) {
+function useTodos() {
 	const {item: toDos, saveItem: saveToDos, loading, error} = useLocalStorage('TODOS_V1', []);
 
 	// Crear los estados para renderizar las tasks y el estado para las busquedas
@@ -52,26 +50,20 @@ function TodoProvider(props) {
 		newToDos.splice(todoIndex, 1);
 		saveToDos(newToDos);
 	};
-	return (
-		<TodoContext.Provider
-			value={{
-				loading,
-				error,
-				totalToDos,
-				completedToDos,
-				searchValue,
-				setSearchValue,
-				searchedToDos,
-				addToDo,
-				completeToDo,
-				deleteToDo,
-				openModal,
-				setOpenModal,
-			}}
-		>
-			{props.children}
-		</TodoContext.Provider>
-	);
+	return {
+		loading,
+		error,
+		totalToDos,
+		completedToDos,
+		searchValue,
+		setSearchValue,
+		searchedToDos,
+		addToDo,
+		completeToDo,
+		deleteToDo,
+		openModal,
+		setOpenModal,
+	};
 }
 
-export {TodoContext, TodoProvider};
+export {useTodos};
