@@ -3,7 +3,7 @@ import '../styles/TodoSearch.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faMagnifyingGlass} from '@fortawesome/free-solid-svg-icons';
 
-function TodoSearch({searchValue, setSearchValue}) {
+function TodoSearch({searchValue, setSearchValue, loading}) {
 	const onSearchValueChange = event => {
 		// console.log(event.target.value);
 		setSearchValue(event.target.value);
@@ -19,6 +19,7 @@ function TodoSearch({searchValue, setSearchValue}) {
 				placeholder='Search your homework'
 				value={searchValue}
 				onChange={onSearchValueChange}
+				disabled={loading}
 			/>
 		</div>
 	);

@@ -3,6 +3,9 @@
 	align-items: center;
 	gap: 15px;
 }
+.todoCounter__loading {
+	opacity: 0.5;
+}
 .todoCounter-title {
 	color: #3c3c3c;
 	font-size: 26px;

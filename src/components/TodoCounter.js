@@ -3,9 +3,9 @@ import '../styles/TodoCounter.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faListCheck} from '@fortawesome/free-solid-svg-icons';
 
-function TodoCounter({totalToDos, completedToDos}) {
+function TodoCounter({totalToDos, completedToDos, loading}) {
 	return (
-		<div className='todoCounter'>
+		<div className={`todoCounter ${!!loading && 'todoCounter__loading'}`}>
 			<span className='todoCounter-icon'>
 				<FontAwesomeIcon icon={faListCheck} />
 			</span>

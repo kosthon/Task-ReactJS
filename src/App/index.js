@@ -32,15 +32,38 @@ function App() {
 
 	return (
 		<React.Fragment>
-			<TodoHeader>
+			<TodoHeader loading={loading}>
 				<TodoCounter totalToDos={totalToDos} completedToDos={completedToDos} />
 				<TodoSearch searchValue={searchValue} setSearchValue={setSearchValue} />
 			</TodoHeader>
-			<TodoList>
+
+			<TodoList
+				error={error}
+				loading={loading}
+				searchedToDos={searchedToDos}
+				totalToDos={totalToDos}
+				searchText={searchValue}
+				onErro={() => <TodosError />}
+				onLoading={() => <TodosLoading />}
+				onEmpty={() => <TodosEmpty />}
+				onEmptySearchResult={searchText => (
+					<p className='informative__mesagge'>Not found results for "{searchText}".</p>
+				)}
+				render={item => (
+					<TodoItem
+						key={item.text}
+						text={item.text}
+						completed={item.completed}
+						onComplete={() => completeToDo(item.text)}
+						onDelete={() => deleteToDo(item.text)}
+					/>
+				)}
+			/>
+
+			{/*<TodoList>
 				{error && <TodosError />}
 				{loading && (
 					<ul>
-						<TodosLoading />
 						<TodosLoading />
 					</ul>
 				)}
@@ -53,8 +76,8 @@ function App() {
 						onComplete={() => completeToDo(item.text)}
 						onDelete={() => deleteToDo(item.text)}
 					/>
-				))}
-			</TodoList>
+				))} 
+			</TodoList>*/}
 
 			{openModal && (
 				<Modal>
