@@ -1,5 +1,4 @@
 import React from 'react';
-import {useTodos} from '../App/useTodos';
 
 function TodoForm({addToDo, setOpenModal}) {
 	const [newToDoValue, setNewToDoValue] = React.useState('');
