@@ -1,0 +1,42 @@
+.changeAlert__bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	display: flex;
+	align-items: flex-end;
+	background: rgba(0, 0, 0, 0.6);
+	width: 100vw;
+	height: 100vh;
+	z-index: 10;
+	transition: all 0.3;
+}
+.changeAlert__content {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	height: 300px;
+	width: 100%;
+	background-color: white;
+	border-radius: 30px 30px 0px 0px;
+	padding: 30px;
+}
+.changeAlert__content p {
+	font-size: 20px;
+	text-align: center;
+	margin-bottom: 20px;
+}
+.changeAlert__content button {
+	background-color: #2000a1;
+	font-size: 14px;
+	font-weight: bold;
+	color: white;
+	padding: 10px 10px;
+	width: 100%;
+	outline: none;
+	border-radius: 8px;
+	border: 0px;
+	box-shadow: 0px 0px 3px rgb(0 0 0 / 16%);
+	transition: all 0.2s;
+	cursor: pointer;
+}

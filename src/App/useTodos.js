@@ -2,7 +2,13 @@ import React from 'react';
 import {useLocalStorage} from './UseLocalStorage';
 
 function useTodos() {
-	const {item: toDos, saveItem: saveToDos, loading, error} = useLocalStorage('TODOS_V1', []);
+	const {
+		item: toDos,
+		saveItem: saveToDos,
+		loading,
+		error,
+		sincronize: sincronizeToDos,
+	} = useLocalStorage('TODOS_V1', []);
 
 	// Crear los estados para renderizar las tasks y el estado para las busquedas
 	const [searchValue, setSearchValue] = React.useState('');
@@ -63,6 +69,7 @@ function useTodos() {
 		deleteToDo,
 		openModal,
 		setOpenModal,
+		sincronizeToDos,
 	};
 }
 
