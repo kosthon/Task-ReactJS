@@ -1,6 +1,4 @@
 import React from 'react';
-import {useTodos} from '../App/useTodos';
-
 import '../styles/CreateTodoButton.css';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faPlus} from '@fortawesome/free-solid-svg-icons';
