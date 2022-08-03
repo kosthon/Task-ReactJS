@@ -45,8 +45,13 @@ function useTodos() {
 	const completeToDo = text => {
 		const todoIndex = toDos.findIndex(toDo => toDo.text === text);
 		const newToDos = [...toDos];
-		newToDos[todoIndex].completed = true;
-		saveToDos(newToDos);
+		if (!newToDos[todoIndex].completed) {
+			newToDos[todoIndex].completed = true;
+			saveToDos(newToDos);
+		} else {
+			newToDos[todoIndex].completed = false;
+			saveToDos(newToDos);
+		}
 	};
 
 	// Eliminar como maracadas las tasks
