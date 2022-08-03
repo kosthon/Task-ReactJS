@@ -13,9 +13,7 @@
 	font-size: 32px;
 	transition: 0.4s ease-in-out;
 }
-.todoItem-icon:hover {
-	color: #2000a1;
-}
+
 .todoItem-icon__active {
 	color: #2000a1;
 }
