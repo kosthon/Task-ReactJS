@@ -26,7 +26,8 @@ function useLocalStorage(itemName, initialValue) {
 				setError(error);
 			}
 		}, 2000);
-	}, [sincronizedItem]);
+		// Agregar el segundo parametro [sincronizedItem] con esto funciona la sincronización con las demás tabs del navegador
+	});
 
 	const saveItem = newItem => {
 		try {
